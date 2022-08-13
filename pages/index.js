@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Banner from '../components/Banner/Banner'
+import Banner from '../components/banner/Banner'
 
 export default function Home() {
   const description='Hacemos los datos faciles de manejar'
