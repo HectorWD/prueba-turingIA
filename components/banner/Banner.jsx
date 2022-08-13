@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from '../nav/NavBar'
 
 
-const Banner = ({navTitle,navDescription,videoURL}) => {
+const Banner = ({navTitle,navDescription,videoURL='/'}) => {
     return (
         <div className=' min-h-[50vh] lg:h-[70vh] relative'>
             <video
@@ -22,7 +22,3 @@ const Banner = ({navTitle,navDescription,videoURL}) => {
 }
 
 export default Banner
-
-/*
-
-*/
