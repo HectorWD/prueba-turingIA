@@ -7,7 +7,7 @@ import { RiLinkedinBoxFill } from "react-icons/ri";
 import { AiOutlineFacebook, AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import NavIcon from './structure/NavIcon'
 
-const NavBar = ({title,description}) => {
+const NavBar = ({ title, description }) => {
     const [isOpen, setIsOpen] = useState(false);
     const handleNav = () => {
         console.log('hola')
@@ -16,14 +16,14 @@ const NavBar = ({title,description}) => {
     return (
         // TODO: Quitar el fondo
         //TODO: Hacerlo para small and md scale
-        <div className='relative grid w-full grid-cols-2 pt-8 duration-150 ease-in md:grid-cols-3'>
-            <div className='flex items-center justify-center w-full h-20 '>
+        <div className='relative grid w-full grid-cols-3 pt-8 duration-150 ease-in md:grid-cols-2 lg:cols-span-1'>
+            <div className='flex items-center justify-center w-full h-20 col-span-2 md:col-span-3 md:h-10 lg:h-20 '>
                 <Link href={'/'}>
-                    <h1 className='text-3xl font-bold text-white cursor-pointer'>TURING-IA</h1>
+                    <h1 className='text-3xl font-bold text-white cursor-pointer lg:text-5xl'>TURING-IA</h1>
                 </Link>
             </div>
-            <div className='items-center hidden w-full h-20 md:flex md:col-span-2'>
-                <ul className='flex m-2 font-bold text-white'>
+            <div className='hidden w-full h-20 md:justify-center md:items-center md:flex md:col-span-3 '>
+                <ul className='flex m-2 font-bold text-white lg:w-full lg:justify-around'>
                     <NavLink title={'Inicio'} URL='/' />
                     <NavLink title={'Nosotros'} URL='/Nosotros' />
                     <NavLink title={'Servicios'} URL='/Servicios' />
@@ -32,23 +32,28 @@ const NavBar = ({title,description}) => {
                     <NavLink title={'Contacto'} URL='/' />
                 </ul>
             </div>
-                {/* Se activa en tamaño sm (Menu desplegable) */}
-            <div className='flex items-center justify-end pr-16 text-white cursor-pointer md:hidden' onClick={handleNav}>
+            {/* Se activa en tamaño sm (Menu desplegable) */}
+            <div
+                className='flex items-center justify-center w-full text-white cursor-pointer md:hidden'
+                onClick={handleNav}>
                 <AiOutlineMenu size={25} />
             </div>
-            <div className='h-10'></div>
             <div className='hidden md:block'></div>
-            <div className='flex justify-end lg:pr-40'>
-                <NavIcon icon={<RiLinkedinBoxFill />} url='/' />
-                <NavIcon icon={<FiInstagram />} url='/' />
-                <NavIcon icon={<FiTwitter />} url='/' />
-                <NavIcon icon={<AiOutlineFacebook />} url='/' />
+            <div className='hidden md:block'>
+                <ul className='flex items-center justify-center'>
+                    <NavIcon icon={<RiLinkedinBoxFill />} url='/' />
+                    <NavIcon icon={<FiInstagram />} url='/' />
+                    <NavIcon icon={<FiTwitter />} url='/' />
+                    <NavIcon icon={<AiOutlineFacebook />} url='/' />
+                </ul>
             </div>
-            <div className='px-20 py-12 text-white md:col-span-1 sm:col-span-1'>
-                <p className='text-xl md:text-3xl lg:text-6xl'>
-                    <span className='text-3xl font-bold md:text-4xl lg:text-6xl'>{title} </span> <br />
-                    {description} </p>
+            <div className='h-40 col-span-3 m-auto text-white '>
+
+                <h3 className='p-4 text-5xl text-center lg:text-7xl '>{title}</h3>
+                <p className='text-2xl text-center lg:text-4xl'>{description}</p>
+
             </div>
+
 
             {/* Menu desplegable */}
             <div
@@ -101,8 +106,8 @@ const NavBar = ({title,description}) => {
                             <p className='uppercase tracking-widest text-[#5651e5] '>Let s Connect</p>
                             <div className='flex items-center justify-between my-4 sm:w-[80%] '>
                                 <NavIcon icon={<RiLinkedinBoxFill />} url='/' />
-                                <NavIcon icon={<FiInstagram />}  url='/'/>
-                                <NavIcon icon={<FiTwitter />}  url='/'/>
+                                <NavIcon icon={<FiInstagram />} url='/' />
+                                <NavIcon icon={<FiTwitter />} url='/' />
                                 <NavIcon icon={<AiOutlineFacebook />} url='/' />
                             </div>
                         </div>
@@ -116,3 +121,6 @@ const NavBar = ({title,description}) => {
 }
 
 export default NavBar
+
+//<h2 className='block w-full text-3xl font-bold md:text-4xl lg:text-6xl bg-red-500/20'>{title} </h2>
+//<p className='text-xl md:text-3xl lg:text-6xl'>{description}</p>

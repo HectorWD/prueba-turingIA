@@ -1,12 +1,14 @@
 import React from 'react'
+import Link from 'next/link'
 
-const NavIcon = ({ icon, url,bgcolor }) => {
+const NavIcon = ({ icon, url='/' }) => {
     return (
-        <div
-            className={`text-white rounded-full mx-2 my-1 hover:bg-sky-400 p-1 cursor-pointer text-2xl`}
-        >
+        <Link href={url}>
+        <li 
+        className='p-1 mx-2 my-1 text-2xl text-white rounded-full cursor-pointer lg:text-3xl hover:text-blue-800'>
             {icon}
-        </div>
+        </li>
+        </Link>
     )
 }
 

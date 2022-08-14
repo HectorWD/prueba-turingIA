@@ -4,7 +4,7 @@ import NavBar from '../nav/NavBar'
 
 const Banner = ({navTitle,navDescription,videoURL='/'}) => {
     return (
-        <div className=' min-h-[50vh] lg:h-[70vh] relative'>
+        <header className=' min-h-[50vh] lg:h-[70vh] relative'>
             <video
                 loop autoPlay playsInline muted
                 poster="assets/img/posters/index.png"
@@ -14,9 +14,9 @@ const Banner = ({navTitle,navDescription,videoURL='/'}) => {
                     src={`${videoURL}`}
                 />
             </video>
-            <div className='absolute w-full h-full bg-black/40'/>
+            <div className='absolute w-full h-full bg-black/40 lg:bg-black/50'/>
             <NavBar title={navTitle} description={navDescription} />
-        </div>
+        </header>
 
     )
 }
