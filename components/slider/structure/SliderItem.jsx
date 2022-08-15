@@ -1,20 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
 
-
-const SliderItem = ({ img, descriptionImage }) => {
+const SliderItem = ({ imgUrl='/', descriptionImage='' }) => {
     return (
-            <div className='flex flex-wrap items-center justify-center h-full'>
-                <div className='w-[90vw] h-[50vh] '>
-                    <Image
-                    src={img}
-                    alt='imagen'
-                    ></Image>
-                </div>
-                <div className='absolute bottom-0 w-[70vw] h-[20vh] bg-white border-2 left-0 border-black'>
-                    {descriptionImage}
-                </div>
+        <>
+            <Image src={imgUrl} alt='hola' layout='responsive' height={20} width={20} />
+            <div className='absolute h-[30%] md:w-[60%] md:h-[30%] lg:w-[80%] lg:h-[35%] w-[70%] left-10 bg-white border-2 bottom-0 hover:bg-blue-600'>
+                <p className='flex items-center h-full font-semibold text-center whitespace-normal text-md hover:text-white'>{descriptionImage} </p>
             </div>
+        </>
 
     )
 }
